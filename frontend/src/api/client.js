@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api'
+  baseURL: import.meta.env.VITE_API_BASE_URL || '/api'
 });
 
 export const getDashboardSummary = () => api.get('/dashboard/summary').then(res => res.data).catch(() => ({ data_source: 'demo', score: 85, cis_compliance: 78, total_cves: 12, patch_status: '2 Updates Available' }));
