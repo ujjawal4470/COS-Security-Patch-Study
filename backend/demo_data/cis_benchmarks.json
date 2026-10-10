@@ -1,0 +1,50 @@
+[
+    {
+        "benchmark_id": "1.1.1.1",
+        "category": "Filesystem",
+        "description": "Ensure mounting of cramfs filesystems is disabled",
+        "severity": "low",
+        "remediation": "Edit /etc/modprobe.d/cramfs.conf and add 'install cramfs /bin/true'",
+        "check_command": "lsmod | grep cramfs"
+    },
+    {
+        "benchmark_id": "1.1.2",
+        "category": "Filesystem",
+        "description": "Ensure /tmp is configured",
+        "severity": "high",
+        "remediation": "Configure /etc/fstab with /tmp on a separate partition",
+        "check_command": "mount | grep -E '\\s/tmp\\s'"
+    },
+    {
+        "benchmark_id": "4.1.1.2",
+        "category": "Network",
+        "description": "Ensure IP forwarding is disabled",
+        "severity": "high",
+        "remediation": "Set net.ipv4.ip_forward=0 in /etc/sysctl.conf",
+        "check_command": "sysctl net.ipv4.ip_forward"
+    },
+    {
+        "benchmark_id": "5.2.2",
+        "category": "SSH",
+        "description": "Ensure SSH PermitEmptyPasswords is disabled",
+        "severity": "critical",
+        "remediation": "Edit /etc/ssh/sshd_config and set PermitEmptyPasswords no",
+        "check_command": "grep -i PermitEmptyPasswords /etc/ssh/sshd_config"
+    },
+    {
+        "benchmark_id": "5.2.3",
+        "category": "SSH",
+        "description": "Ensure SSH PermitRootLogin is disabled",
+        "severity": "critical",
+        "remediation": "Edit /etc/ssh/sshd_config and set PermitRootLogin no",
+        "check_command": "grep -i PermitRootLogin /etc/ssh/sshd_config"
+    },
+    {
+        "benchmark_id": "6.1.1",
+        "category": "Authentication",
+        "description": "Ensure password creation requirements are configured",
+        "severity": "medium",
+        "remediation": "Configure pam_cracklib or pam_pwquality",
+        "check_command": "grep -E 'pam_cracklib|pam_pwquality' /etc/pam.d/system-auth"
+    }
+]

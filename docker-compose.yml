@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: cos-backend
+    ports:
+      - '5000:5000'
+    volumes:
+      - db_data:/app/data
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_PATH=/app/data/cos_study.db
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: cos-frontend
+    ports:
+      - '80:80'
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:

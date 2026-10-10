@@ -1,0 +1,43 @@
+{
+    "os_info": {
+        "os": "Container-Optimized OS from Google",
+        "version": "101",
+        "kernel": "5.15.112+",
+        "architecture": "x86_64",
+        "uptime": "14 days, 3 hours, 45 minutes"
+    },
+    "open_ports": [
+        {"port": "22", "protocol": "tcp", "service": "sshd"},
+        {"port": "443", "protocol": "tcp", "service": "docker-proxy"}
+    ],
+    "running_services": [
+        "sshd.service",
+        "docker.service",
+        "systemd-journald.service",
+        "google-oslogin.service"
+    ],
+    "user_accounts": [
+        "root",
+        "chrony",
+        "docker"
+    ],
+    "sysctl_findings": [
+        {"key": "net.ipv4.ip_forward", "value": "1", "status": "FAIL"},
+        {"key": "net.ipv4.tcp_syncookies", "value": "1", "status": "PASS"},
+        {"key": "kernel.dmesg_restrict", "value": "0", "status": "FAIL"}
+    ],
+    "docker_info": {
+        "ServerVersion": "20.10.21",
+        "SecurityOptions": ["name=seccomp,profile=default"],
+        "UserlandProxy": true
+    },
+    "running_containers": [
+        {"id": "c1a2b3c4d5e6", "name": "web-proxy", "image": "nginx:latest", "ports": "80/tcp, 443/tcp"},
+        {"id": "e6d5c4b3a21c", "name": "app-backend", "image": "node:16-alpine", "ports": "8080/tcp"}
+    ],
+    "container_security_checks": [
+        {"check": "Docker daemon running as root", "status": "WARN"},
+        {"check": "Default bridge network in use", "status": "FAIL"},
+        {"check": "User namespace remapping enabled", "status": "FAIL"}
+    ]
+}

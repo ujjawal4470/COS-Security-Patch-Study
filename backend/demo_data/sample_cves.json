@@ -1,0 +1,57 @@
+[
+    {
+        "cve_id": "CVE-2023-4911",
+        "severity": "High",
+        "cvss_score": 7.8,
+        "description": "A vulnerability in the GNU C Library (glibc) allowing a local attacker to gain escalated privileges via crafted GLIBC_TUNABLES environment variables.",
+        "affected_versions": "< cos-105-17412.226.33",
+        "fixed_in_version": "cos-105-17412.226.33",
+        "patch_status": "fixed",
+        "reference_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4911",
+        "published_date": "2023-10-03"
+    },
+    {
+        "cve_id": "CVE-2023-44487",
+        "severity": "Critical",
+        "cvss_score": 7.5,
+        "description": "HTTP/2 Rapid Reset vulnerability allowing denial of service attacks.",
+        "affected_versions": "< cos-101-17162.336.36",
+        "fixed_in_version": "cos-101-17162.336.36",
+        "patch_status": "fixed",
+        "reference_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44487",
+        "published_date": "2023-10-10"
+    },
+    {
+        "cve_id": "CVE-2024-1086",
+        "severity": "High",
+        "cvss_score": 7.8,
+        "description": "A use-after-free vulnerability in the Linux kernel's netfilter: nf_tables component can be exploited to achieve local privilege escalation.",
+        "affected_versions": "< cos-109-17800.50.2",
+        "fixed_in_version": "cos-109-17800.50.2",
+        "patch_status": "affected",
+        "reference_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1086",
+        "published_date": "2024-01-31"
+    },
+    {
+        "cve_id": "CVE-2023-6546",
+        "severity": "High",
+        "cvss_score": 7.0,
+        "description": "A race condition was found in the GSM 0710 tty multiplexor in the Linux kernel.",
+        "affected_versions": "< cos-105-17412.100.1",
+        "fixed_in_version": "cos-105-17412.100.1",
+        "patch_status": "fixed",
+        "reference_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6546",
+        "published_date": "2023-12-07"
+    },
+    {
+        "cve_id": "CVE-2024-0193",
+        "severity": "Medium",
+        "cvss_score": 6.1,
+        "description": "Use after free vulnerability in Linux kernel netfilter.",
+        "affected_versions": "< cos-109-17800.0.0",
+        "fixed_in_version": "cos-109-17800.0.0",
+        "patch_status": "affected",
+        "reference_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0193",
+        "published_date": "2024-01-08"
+    }
+]
